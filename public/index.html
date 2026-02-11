@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World News Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Global Headlines</p>
+          <h1>World News, Unified</h1>
+          <p class="subhead">
+            A fast, clean reader that collects homepage headlines from your
+            trusted sources.
+          </p>
+        </div>
+        <div class="actions">
+          <button id="refresh" type="button">Refresh</button>
+          <div class="status" id="status">Loading…</div>
+        </div>
+      </header>
+
+      <section class="grid" id="grid"></section>
+    </main>
+
+    <template id="source-card">
+      <article class="card">
+        <div class="card-header">
+          <h2></h2>
+          <a class="site-link" target="_blank" rel="noopener noreferrer">Visit</a>
+        </div>
+        <ul class="headline-list"></ul>
+        <p class="error"></p>
+      </article>
+    </template>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
