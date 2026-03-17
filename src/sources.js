@@ -97,6 +97,22 @@ const sources = [
     rssUrl: "https://www.euronews.com/rss",
     scrapeUrl: "https://www.euronews.com/",
     selectors: [".m-object__title__link", "h2 a", "h3 a", "article a"]
+  },
+  {
+    id: "pravda-ru",
+    name: "Pravda.ru",
+    homepage: "https://pravda.ru/",
+    rssUrl: "https://pravda.ru/export.xml",
+    scrapeUrl: "https://pravda.ru/",
+    selectors: ["a > h2", "h2 a", "h3 a", "article a"]
+  },
+  {
+    id: "times-of-india-us",
+    name: "Times of India (US)",
+    homepage: "https://timesofindia.indiatimes.com/us",
+    rssUrl: "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    scrapeUrl: "https://timesofindia.indiatimes.com/us",
+    selectors: [".fila_title a", ".w_tle a", "h2 a", "h3 a", "article a", ".top-newslist a"]
   }
 ];
 
