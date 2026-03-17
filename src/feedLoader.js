@@ -13,9 +13,9 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function fetchText(url) {
+async function fetchText(url, timeoutMs = FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
     const res = await fetch(url, {
@@ -72,7 +72,7 @@ function filterToHost(url, host) {
 }
 
 async function getRssItems(source) {
-  const xml = await fetchText(source.rssUrl);
+  const xml = await fetchText(source.rssUrl, source.timeoutMs);
   const feed = await parser.parseString(xml);
   const items = (feed.items || [])
     .map((item) => {
@@ -87,7 +87,7 @@ async function getRssItems(source) {
 }
 
 async function getScrapedItems(source) {
-  const html = await fetchText(source.scrapeUrl);
+  const html = await fetchText(source.scrapeUrl, source.timeoutMs);
   const $ = cheerio.load(html);
   const host = new URL(source.homepage).hostname;
   const seen = new Set();

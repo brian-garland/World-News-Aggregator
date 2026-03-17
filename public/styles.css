@@ -149,6 +149,8 @@ button:hover {
 
 .headline-list a:hover {
   color: var(--accent-strong);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .error {

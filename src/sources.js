@@ -104,6 +104,7 @@ const sources = [
     homepage: "https://pravda.ru/",
     rssUrl: "https://pravda.ru/export.xml",
     scrapeUrl: "https://pravda.ru/",
+    timeoutMs: 15000,
     selectors: ["a > h2", "h2 a", "h3 a", "article a"]
   },
   {
